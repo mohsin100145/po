@@ -1,70 +1,171 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Police</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{{ asset('assets_login/images/icons/favicon.ico') }}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets_login/vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets_login/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets_login/vendor/animate/animate.css') }}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets_login/vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets_login/vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets_login/css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets_login/css/main.css') }}">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background: #0D0063;">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt style="margin-top: 20px;">
+					
+					
+					<img src="{{ asset('assets_login/images/police_logo_login.png') }}" alt="IMG">
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Loghin</div>
-                <div class="panel-body" style="background: url(assets/img/bg_image.jpeg) no-repeat center center fixed; 
-                    -webkit-background-size: cover;
-                    -moz-background-size: cover;
-                    -o-background-size: cover;
-                    background-size: cover;">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                        {{ csrf_field() }}
+					<!-- <div>
+						<img src="images/myol8171.png" alt="my" height="42" width="42" style="margin-left: 60px;">
+						<img src="images/idialerAgent.png" alt="mya" height="42" width="122" style="float: right;">
+					</div> -->
+				</div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+				<form class="login100-form validate-form">
+					<span class="login100-form-title" style="padding-bottom: 10px;">
+						Thana Login
+					</span>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+					<div class="wrap-input100" data-validate = "Phone Extension is required">
+						<input class="input100" type="text" name="phone_extension" placeholder="Thana Username">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+					<div class="wrap-input100 " data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Thana Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn" style="padding-top: 0px;">
+						<button class="login100-form-btn">
+							Thana Login
+						</button>
+					</div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+					<!-- <div class="text-center p-t-12">
+						<span class="txt1">
+							Forgot
+						</span>
+						<a class="txt2" href="#">
+							Username / Password?
+						</a>
+					</div> -->
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
+					<!-- <div class="text-center p-t-136">
+						<a class="txt2" href="#">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div> -->
+				</form>
 
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+				
+				<form method="POST" action="{{ url('/login') }}" class="login100-form validate-form" style="margin-left: 450px; margin-top: -80px;">
+					{{ csrf_field() }}
+					<span class="login100-form-title" style="padding-bottom: 10px;">
+						Dashboard Login
+					</span>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+					<div class="wrap-input100 {{ $errors->has('email') ? ' has-error' : '' }}" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email" placeholder="Dashboard Username">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
+					@if ($errors->has('email'))
+                        <span class="help-block text-danger">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-sign-in"></i> Login
-                                </button>
+					<div class="wrap-input100 {{ $errors->has('password') ? ' has-error' : '' }}" data-validate = "Password is required">
+						<input class="input100" type="password" name="password" placeholder="Dashboard Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					@if ($errors->has('password'))
+                        <span class="help-block text-danger">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+					
+					<div class="container-login100-form-btn" style="padding-top: 0px;">
+						<button type="submit" class="login100-form-btn">
+							Dashboard Login
+						</button>
+					</div>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+					<!-- <div class="text-center p-t-12">
+						<span class="txt1">
+							Forgot
+						</span>
+						<a class="txt2" href="#">
+							Username / Password?
+						</a>
+					</div>
+ -->
+					<!-- <div class="text-center p-t-136">
+						<a class="txt2" href="#">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div> -->
+				</form>
+
+				<div>
+					<!-- <img src="images/myol8171.png" alt="my" height="42" width="42" style="margin-left: 60px;"> -->
+					<img src="{{ asset('assets_login/images/idialerAgent.png') }}" alt="mya" height="42" width="122">
+					<!-- <h2 style="float: right;"><i>i</i>dialar</h2> -->
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="{{ asset('assets_login/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('assets_login/vendor/bootstrap/js/popper.js') }}"></script>
+	<script src="{{ asset('assets_login/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('assets_login/vendor/select2/select2.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ asset('assets_login/vendor/tilt/tilt.jquery.min.js') }}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="{{ asset('assets_login/js/main.js') }}"></script>
+
+</body>
+</html>

@@ -28,7 +28,7 @@
                         {!! Form::label('register', 'register', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                         <div class="col-xs-9 col-sm-9">
                             <div class="col-xs-12 col-sm-12">
-                                {!! Form::text('register', null, ['class' => 'form-control', 'id' => 'register', 'placeholder' => 'Enter register (Example: 9610100333:56832a5896b@202.51.179.237:5060/9610100333)', 'autocomplete' => 'off']) !!}
+                                {!! Form::text('register', null, ['class' => 'form-control', 'id' => 'register', 'placeholder' => 'Enter register (Example: register => 9610100333:56832a5896b@202.51.179.237:5060/9610100333)', 'autocomplete' => 'off']) !!}
                                 <span class="text-danger">
                                     {{ $errors->first('register') }}
                                 </span>
@@ -43,7 +43,7 @@
                             {!! Form::label('disallow', 'disallow', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('disallow', null, ['class' => 'form-control', 'id' => 'disallow', 'placeholder' => 'Enter disallow (Example: all)', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('disallow', null, ['class' => 'form-control', 'id' => 'disallow', 'placeholder' => 'Enter disallow (Example: disallow=all)', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('disallow') }}
                                     </span>
@@ -55,7 +55,7 @@
                             {!! Form::label('type', 'type', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('type', null, ['class' => 'form-control', 'id' => 'type', 'placeholder' => 'Enter type (Example: friend)', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('type', null, ['class' => 'form-control', 'id' => 'type', 'placeholder' => 'Enter type (Example: type=friend)', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('type') }}
                                     </span>
@@ -67,7 +67,7 @@
                             {!! Form::label('dtmfmode', 'dtmfmode', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('dtmfmode', null, ['class' => 'form-control', 'id' => 'dtmfmode', 'placeholder' => 'Enter dtmfmode (Example: rfc2833)', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('dtmfmode', null, ['class' => 'form-control', 'id' => 'dtmfmode', 'placeholder' => 'Enter dtmfmode (Example: dtmfmode=rfc2833)', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('dtmfmode') }}
                                     </span>
@@ -79,7 +79,7 @@
                             {!! Form::label('context', 'context', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('context', null, ['class' => 'form-control', 'id' => 'context', 'placeholder' => 'Enter context (Example: trunkinbound)', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('context', null, ['class' => 'form-control', 'id' => 'context', 'placeholder' => 'Enter context (Example: context=trunkinbound)', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('context') }}
                                     </span>
@@ -91,7 +91,7 @@
                             {!! Form::label('qualify', 'qualify', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('qualify', null, ['class' => 'form-control', 'id' => 'qualify', 'placeholder' => 'Enter qualify (Example: yes)', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('qualify', null, ['class' => 'form-control', 'id' => 'qualify', 'placeholder' => 'Enter qualify (Example: qualify=yes)', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('qualify') }}
                                     </span>
@@ -103,7 +103,7 @@
                             {!! Form::label('insecure', 'insecure', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('insecure', null, ['class' => 'form-control', 'id' => 'insecure', 'placeholder' => 'Enter insecure (Example: port,invite)', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('insecure', null, ['class' => 'form-control', 'id' => 'insecure', 'placeholder' => 'Enter insecure (Example: insecure=port,invite)', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('insecure') }}
                                     </span>
@@ -115,7 +115,7 @@
                             {!! Form::label('nat', 'nat', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('nat', null, ['class' => 'form-control', 'id' => 'nat', 'placeholder' => 'Enter nat (Example: force_rport,comedia)', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('nat', null, ['class' => 'form-control', 'id' => 'nat', 'placeholder' => 'Enter nat (Example: nat=force_rport,comedia)', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('nat') }}
                                     </span>
@@ -127,7 +127,7 @@
                             {!! Form::label('host', 'host', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('host', null, ['class' => 'form-control', 'id' => 'host', 'placeholder' => 'Enter host (Example: 202.51.179.237)', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('host', null, ['class' => 'form-control', 'id' => 'host', 'placeholder' => 'Enter host (Example: host=202.51.179.237)', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('host') }}
                                     </span>
@@ -139,7 +139,7 @@
                             {!! Form::label('username', 'username', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('username', null, ['class' => 'form-control', 'id' => 'username', 'placeholder' => 'Enter username (Example: 9610100333)', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('username', null, ['class' => 'form-control', 'id' => 'username', 'placeholder' => 'Enter username (Example: username=9610100333)', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('username') }}
                                     </span>
@@ -151,7 +151,7 @@
                             {!! Form::label('secret', 'secret', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('secret', null, ['class' => 'form-control', 'id' => 'secret', 'placeholder' => 'Enter secret (Example: 56832a5896b)', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('secret', null, ['class' => 'form-control', 'id' => 'secret', 'placeholder' => 'Enter secret (Example: secret=56832a5896b)', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('secret') }}
                                     </span>
@@ -163,7 +163,7 @@
                             {!! Form::label('gsmallow', 'gsmallow', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('gsmallow', null, ['class' => 'form-control', 'id' => 'gsmallow', 'placeholder' => 'Enter gsmallow (Example: gsm)', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('gsmallow', null, ['class' => 'form-control', 'id' => 'gsmallow', 'placeholder' => 'Enter gsmallow (Example: allow=gsm)', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('gsmallow') }}
                                     </span>
@@ -175,7 +175,7 @@
                             {!! Form::label('alawallow', 'alawallow', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('alawallow', null, ['class' => 'form-control', 'id' => 'alawallow (Example: alaw)', 'placeholder' => 'Enter alawallow', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('alawallow', null, ['class' => 'form-control', 'id' => 'alawallow (Example: alaw)', 'placeholder' => 'alawallow (Example: allow=alaw)', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('alawallow') }}
                                     </span>
@@ -187,7 +187,7 @@
                             {!! Form::label('ulawallow', 'ulawallow', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('ulawallow', null, ['class' => 'form-control', 'id' => 'ulawallow', 'placeholder' => 'Enter ulawallow (Example: ulaw)', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('ulawallow', null, ['class' => 'form-control', 'id' => 'ulawallow', 'placeholder' => 'Enter ulawallow (Example: allow=ulaw)', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('ulawallow') }}
                                     </span>
@@ -204,7 +204,7 @@
                             {!! Form::label('AGIexten', 'AGIexten', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('AGIexten', null, ['class' => 'form-control', 'id' => 'AGIexten', 'placeholder' => 'Enter AGIexten (Example: _33X.,1,AGI(agi://127.0.0.1:4577/call_log) )', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('AGIexten', null, ['class' => 'form-control', 'id' => 'AGIexten', 'placeholder' => 'Enter AGIexten (Example: exten => _33X.,1,AGI(agi://127.0.0.1:4577/call_log) )', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('AGIexten') }}
                                     </span>
@@ -216,7 +216,7 @@
                             {!! Form::label('SETexten', 'SETexten', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('SETexten', null, ['class' => 'form-control', 'id' => 'SETexten', 'placeholder' => 'Enter SETexten (Example: _33X.,n,SET(CALLERID(num)=09610100333) )', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('SETexten', null, ['class' => 'form-control', 'id' => 'SETexten', 'placeholder' => 'Enter SETexten (Example: exten => _33X.,n,SET(CALLERID(num)=09610100333) )', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('SETexten') }}
                                     </span>
@@ -228,7 +228,7 @@
                             {!! Form::label('Dialexten', 'Dialexten', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('Dialexten', null, ['class' => 'form-control', 'id' => 'Dialexten', 'placeholder' => 'Enter Dialexten (Example: _33X.,n,Dial(SIP/${EXTEN:2}@RND333,,tTo) )', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('Dialexten', null, ['class' => 'form-control', 'id' => 'Dialexten', 'placeholder' => 'Enter Dialexten (Example: exten => _33X.,n,Dial(SIP/${EXTEN:2}@RND333,,tTo) )', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('Dialexten') }}
                                     </span>
@@ -240,7 +240,7 @@
                             {!! Form::label('Hangupexten', 'Hangupexten', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                             <div class="col-xs-9 col-sm-9">
                                 <div class="col-xs-12 col-sm-12">
-                                    {!! Form::text('Hangupexten', null, ['class' => 'form-control', 'id' => 'Hangupexten', 'placeholder' => 'Enter Hangupexten (Example: _33X.,n,Hangup)', 'autocomplete' => 'off']) !!}
+                                    {!! Form::text('Hangupexten', null, ['class' => 'form-control', 'id' => 'Hangupexten', 'placeholder' => 'Enter Hangupexten (Example: exten => _33X.,n,Hangup)', 'autocomplete' => 'off']) !!}
                                     <span class="text-danger">
                                         {{ $errors->first('Hangupexten') }}
                                     </span>

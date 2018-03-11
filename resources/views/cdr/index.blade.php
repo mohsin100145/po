@@ -18,55 +18,57 @@
                     <h3 class="panel-title text-center"><i class="fa fa-list-ul"></i> List of <code><b>CDR</b></code></h3>
                 </div>
                 <div class="panel-body">
-                    <table id="myTable" class="table table-bordered table-striped table-hover">
-                        <thead>
-                            <tr class="success">
-                                <th>SL</th>
-                                <th>ID</th>
-                                <th>calldate</th>
-                                <th>clid</th>
-                                <th>src</th>
-                                <th>dst</th>
-                                <th>channel</th>
-                                <th>dstchannel</th>
-                                <th>lastapp</th>
-                                <th>lastdata</th>
-                                <th>duration</th>
-                                <th>billsec</th>
-                                <th>disposition</th>
-                                <th>amaflags</th>
-                                <th>accountcode</th>
-                                <th>uniqueid</th>
-                                <th>userfield</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                            $i = 0;
-                        ?>
-                        @foreach($cdrs as $cdr)
-                            <tr>
-                                <td>{{ ++$i }}</td>
-                                <td>{{ $cdr->id }}</td>
-                                <td>{{ $cdr->calldate }}</td>
-                                <td>{{ $cdr->clid }}</td>
-                                <td>{{ $cdr->src }}</td>
-                                <td>{{ $cdr->dst }}</td>
-                                <td>{{ $cdr->channel }}</td>
-                                <td>{{ $cdr->dstchannel }}</td>
-                                <td>{{ $cdr->lastapp }}</td>
-                                <td>{{ $cdr->lastdata }}</td>
-                                <td>{{ $cdr->duration }}</td>
-                                <td>{{ $cdr->billsec }}</td>
-                                <td>{{ $cdr->disposition }}</td>
-                                <td>{{ $cdr->amaflags }}</td>
-                                <td>{{ $cdr->accountcode }}</td>
-                                <td>{{ $cdr->uniqueid }}</td>
-                                <td>{{ $cdr->userfield }}</td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                    <div class="table-responsive"> 
+                        <table id="myTable" class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <tr class="success">
+                                    <th>SL</th>
+                                    <th>ID</th>
+                                    <th>calldate</th>
+                                    <th>clid</th>
+                                    <th>src</th>
+                                    <th>dst</th>
+                                    <th>channel</th>
+                                    <th>dstchannel</th>
+                                    <th>lastapp</th>
+                                    <th>lastdata</th>
+                                    <th>duration</th>
+                                    <th>billsec</th>
+                                    <th>disposition</th>
+                                    <th>amaflags</th>
+                                    <th>accountcode</th>
+                                    <th>uniqueid</th>
+                                    <th>userfield</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                                $i = 0;
+                            ?>
+                            @foreach($cdrs as $cdr)
+                                <tr>
+                                    <td>{{ ++$i }}</td>
+                                    <td>{{ $cdr->id }}</td>
+                                    <td>{{ $cdr->calldate }}</td>
+                                    <td>{{ $cdr->clid }}</td>
+                                    <td>{{ $cdr->src }}</td>
+                                    <td>{{ $cdr->dst }}</td>
+                                    <td>{{ $cdr->channel }}</td>
+                                    <td>{{ $cdr->dstchannel }}</td>
+                                    <td>{{ $cdr->lastapp }}</td>
+                                    <td>{{ $cdr->lastdata }}</td>
+                                    <td>{{ $cdr->duration }}</td>
+                                    <td>{{ $cdr->billsec }}</td>
+                                    <td>{{ $cdr->disposition }}</td>
+                                    <td>{{ $cdr->amaflags }}</td>
+                                    <td>{{ $cdr->accountcode }}</td>
+                                    <td>{{ $cdr->uniqueid }}</td>
+                                    <td>{{ $cdr->userfield }}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

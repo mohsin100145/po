@@ -12,6 +12,11 @@ use App\Models\Carrier;
 
 class CarrierController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
 	public function index()
     {
     	$carriers = Carrier::orderBy('id', 'desc')->get();
@@ -148,7 +153,7 @@ class CarrierController extends Controller
         $carrier->SETexten = $request->SETexten;
         $carrier->Dialexten = $request->Dialexten;
         $carrier->Hangupexten = $request->Hangupexten;
-        //$carrier->created_by = Auth::id();
+        $carrier->created_by = Auth::id();
         $carrier->save();
 
         flash()->message($carrierid . ' Carrier Created Successfully.');
@@ -320,7 +325,7 @@ class CarrierController extends Controller
         $carrier->SETexten = $request->SETexten;
         $carrier->Dialexten = $request->Dialexten;
         $carrier->Hangupexten = $request->Hangupexten;
-        //$carrier->updated_by = Auth::id();
+        $carrier->updated_by = Auth::id();
         $carrier->save();
         flash()->success($request->carrierid . ' Carrier ID Updated Successfully');
         return redirect('carrier');

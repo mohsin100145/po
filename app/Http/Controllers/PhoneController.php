@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Auth;
 
 class PhoneController extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
     	$phones = Phone::orderBy('id', 'desc')->get();
@@ -129,7 +134,7 @@ class PhoneController extends Controller
         $phone->type = $type;
         $phone->host = $host;
         $phone->thana = $thana;
-        //$phone->created_by = Auth::id();
+        $phone->created_by = Auth::id();
         $phone->save();
 
 		flash()->message($username . ' Phone Extension Created Successfully.');
@@ -230,7 +235,7 @@ class PhoneController extends Controller
         $phone->callerid = $callerid;
         $phone->mailbox = $mailbox;
         $phone->thana = $thana;
-        //$phone->updated_by = Auth::id();
+        $phone->updated_by = Auth::id();
         $phone->save();
         flash()->success($username . ' Phone Extension Updated Successfully');
     	return redirect('phone');

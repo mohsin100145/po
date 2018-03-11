@@ -31,7 +31,7 @@
 <body class="hold-transition skin-blue sidebar-mini">
 	<div class="wrapper">
   	<header class="main-header">
-      <a href="#" class="logo">
+      <a href="{{ url('/') }}" class="logo">
         <span class="logo-mini"><b>999</b></span>
         <span class="logo-lg" style="margin-left: -80px;">Call: <b>999</b></span>
       </a>
@@ -79,6 +79,15 @@
             <a href="{{ url('/cdr') }}">
               <i class="glyphicon glyphicon-phone"></i> <span>Cdr</span>
             </a>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-user-circle"></i>
+              <span>{{ Auth::user()->name }}</span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+            </ul>
           </li>
 
 		      <li style="margin-top: 50px;" class="thumbnail">      
