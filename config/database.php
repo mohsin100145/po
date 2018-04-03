@@ -71,7 +71,7 @@ return [
             'host'      => '127.0.0.1',
             'database'  => 'asterisk',
             'username'  => 'root',
-            'password'  => 'm',
+            'password'  => 'dev1234',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
