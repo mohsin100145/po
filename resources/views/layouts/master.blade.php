@@ -80,6 +80,11 @@
               <i class="glyphicon glyphicon-phone"></i> <span>Cdr</span>
             </a>
           </li>
+          <li {{ ( Request::is('chart') ? 'class=active' : '' ) }}>
+            <a href="{{ url('/chart') }}">
+              <i class="fa fa-pie-chart"></i> <span>Chart</span>
+            </a>
+          </li>
           <li class="treeview">
             <a href="#">
               <i class="fa fa-user-circle"></i>
