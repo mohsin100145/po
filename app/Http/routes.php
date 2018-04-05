@@ -37,5 +37,6 @@ Route::get('/carrier/{id}/edit', 'CarrierController@edit');
 Route::put('/carrier/{id}', 'CarrierController@update');
 
 Route::get('/cdr', 'CdrController@index');
+Route::get('/cdr-report-form', 'CdrController@reportForm');
 
 Route::get('/chart', 'ChartController@index');

@@ -15,4 +15,9 @@ class CdrController extends Controller
 
     	return view('cdr.index', compact('cdrs'));
     }
+
+    public function reportForm()
+    {
+    	return view('cdr.report_form');
+    }
 }
