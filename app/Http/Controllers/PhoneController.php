@@ -64,7 +64,7 @@ class PhoneController extends Controller
         }
 
     	$search = "[" . $username . "]";
-		$string = file_get_contents("/var/www/html/police/resources/views/phone/sip-myol.conf");
+		$string = file_get_contents("/etc/asterisk/sip-myol.conf");
 		$string = explode("\n", $string);
 		if(in_array($search, $string)) {
 			flash()->error('This Phone Extension is Already Exist.');
@@ -72,7 +72,7 @@ class PhoneController extends Controller
 		}
 
 
-		$fileSip = fopen("/var/www/html/police/resources/views/phone/sip-myol.conf", "a+") or die("Unable to open file!");
+		$fileSip = fopen("/etc/asterisk/sip-myol.conf", "a+") or die("Unable to open file!");
 
 		$startSip = "[" . $username . "]\n";
 		fwrite($fileSip, $startSip);
@@ -107,7 +107,7 @@ class PhoneController extends Controller
 		fclose($fileSip);
 
 
-		$fileExten = fopen("/var/www/html/police/resources/views/phone/extensions-myol.conf", "a+") or die("Unable to open file!");
+		$fileExten = fopen("/etc/asterisk/extensions-myol.conf", "a+") or die("Unable to open file!");
 
 		$newLineExten = "\n";
 		fwrite($fileExten, $newLineExten);
@@ -187,11 +187,11 @@ class PhoneController extends Controller
         }
 
         $search = "[" . $username . "]";
-		$string = file_get_contents('/var/www/html/police/resources/views/phone/sip-myol.conf');
+		$string = file_get_contents('/etc/asterisk/sip-myol.conf');
 		$string = explode("\n", $string);
 
 		if(in_array($search, $string)) {
-			$fileSip = '/var/www/html/police/resources/views/phone/sip-myol.conf';
+			$fileSip = '/etc/asterisk/sip-myol.conf';
 			$linecount = 0;
 			$handle = fopen($fileSip, "r");
 			while(!feof($handle)){
@@ -206,7 +206,7 @@ class PhoneController extends Controller
 			$lines = file($fileSip);//file in to an array
 			//echo $lines[$linecount - 1];
 
-			$filenameSip = "/var/www/html/police/resources/views/phone/sip-myol.conf"; 
+			$filenameSip = "/etc/asterisk/sip-myol.conf"; 
 			$fileOpenSip = fopen($filenameSip, "r") or die("Couldn't create new file");  
 			$fileReadSip = fread ($fileOpenSip, filesize($filenameSip)); 
 

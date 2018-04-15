@@ -64,7 +64,7 @@ class CarrierController extends Controller
         }
 
         $searchRegister = $request->register;
-        $stringForReg = file_get_contents("/var/www/html/police/resources/views/phone/sip-myol.conf");
+        $stringForReg = file_get_contents("/etc/asterisk/sip-myol.conf");
         $stringForReg = explode("\n", $stringForReg);
         if(in_array($searchRegister, $stringForReg)) {
             flash()->error('This Registration String is Already Exist.');
@@ -73,14 +73,14 @@ class CarrierController extends Controller
 
         $searchCarrierIdComment = "; CARRIERID=" . $request->carrier_id;
 
-        $stringForCarrierIdSip = file_get_contents("/var/www/html/police/resources/views/phone/sip-myol.conf");
+        $stringForCarrierIdSip = file_get_contents("/etc/asterisk/sip-myol.conf");
         $stringForCarrierIdSip = explode("\n", $stringForCarrierIdSip);
         if(in_array($searchCarrierIdComment, $stringForCarrierIdSip)) {
             flash()->error('This Carrier ID is Already Exist.');
             return redirect()->back()->withInput();
         }
 
-        $stringForCarrierIdExten = file_get_contents("/var/www/html/police/resources/views/phone/extensions-myol.conf");
+        $stringForCarrierIdExten = file_get_contents("/etc/asterisk/extensions-myol.conf");
         $stringForCarrierIdExten = explode("\n", $stringForCarrierIdExten);
         if(in_array($searchCarrierIdComment, $stringForCarrierIdExten)) {
             flash()->error('This Carrier ID is Already Exist');
@@ -90,7 +90,7 @@ class CarrierController extends Controller
         $carrierid = $request->carrierid;
 
         $search = "[" . $carrierid . "]";
-        $string = file_get_contents("/var/www/html/police/resources/views/phone/sip-myol.conf");
+        $string = file_get_contents("/etc/asterisk/sip-myol.conf");
         $string = explode("\n", $string);
         if(in_array($search, $string)) {
             flash()->error('This Carrier ID is Already Exist.');
@@ -118,7 +118,7 @@ class CarrierController extends Controller
 
 
         $prependSip = $carrierIdComment . $register . $startSip . $disallow . $type . $dtmfmode . $context . $qualify . $insecure . $nat . $host . $username . $secret . $gsmallow . $alawallow . $ulawallow . $newLineSip;
-        $fileSip = '/var/www/html/police/resources/views/phone/sip-myol.conf';
+        $fileSip = '/etc/asterisk/sip-myol.conf';
         $fileContentsSip = file_get_contents($fileSip);
         file_put_contents($fileSip, $prependSip . $fileContentsSip);
 
@@ -129,7 +129,7 @@ class CarrierController extends Controller
         $newLineExten = "\n";
 
         $prependExten = $carrierIdComment . $AGIexten . $SETexten . $Dialexten . $Hangupexten . $newLineExten;
-        $fileExten = '/var/www/html/police/resources/views/phone/extensions-myol.conf';
+        $fileExten = '/etc/asterisk/extensions-myol.conf';
         $fileContentsExten = file_get_contents($fileExten);
         file_put_contents($fileExten, $prependExten . $fileContentsExten);
 
@@ -211,10 +211,10 @@ class CarrierController extends Controller
         $searchSip = "[" . $carrier->carrierid . "]";
 
         /* sip-myol.conf */
-        $stringSip = file_get_contents('/var/www/html/police/resources/views/phone/sip-myol.conf');
+        $stringSip = file_get_contents('/etc/asterisk/sip-myol.conf');
         $stringSip = explode("\n", $stringSip);
         if(in_array($searchSip, $stringSip)) {
-            $fileSip = '/var/www/html/police/resources/views/phone/sip-myol.conf';
+            $fileSip = '/etc/asterisk/sip-myol.conf';
             $lineCountSip = 0;
             $handleSip = fopen($fileSip, "r");
             while(!feof($handleSip)){
@@ -230,7 +230,7 @@ class CarrierController extends Controller
             //echo $linesSip[$lineCountSip - 1];
 
             //sip-myol.conf File edit
-            $filenameSip = "/var/www/html/police/resources/views/phone/sip-myol.conf"; 
+            $filenameSip = "/etc/asterisk/sip-myol.conf"; 
             $fileOpenSip = fopen($filenameSip, "r") or die("Couldn't create new file");  
             $fileReadSip = fread ($fileOpenSip, filesize($filenameSip)); 
 
@@ -266,10 +266,10 @@ class CarrierController extends Controller
         /* extensions-myol.conf */
         $searchExten = "; CARRIERID=" . $carrier->carrierid;
         
-        $stringExten = file_get_contents('/var/www/html/police/resources/views/phone/extensions-myol.conf');
+        $stringExten = file_get_contents('/etc/asterisk/extensions-myol.conf');
         $stringExten = explode("\n", $stringExten);
         if(in_array($searchExten, $stringExten)) {
-            $fileExten = '/var/www/html/police/resources/views/phone/extensions-myol.conf';
+            $fileExten = '/etc/asterisk/extensions-myol.conf';
             $lineCountExten = 0;
             $handleExten = fopen($fileExten, "r");
             while(!feof($handleExten)){
@@ -284,7 +284,7 @@ class CarrierController extends Controller
             $linesExten = file($fileExten);
 
             //extensions-myol.conf File edit
-            $filenameExten = "/var/www/html/police/resources/views/phone/extensions-myol.conf"; 
+            $filenameExten = "/etc/asterisk/extensions-myol.conf"; 
             $fileOpenExten = fopen($filenameExten, "r") or die("Couldn't create new file");  
             $fileReadExten = fread ($fileOpenExten, filesize($filenameExten)); 
 
