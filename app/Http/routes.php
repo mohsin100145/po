@@ -43,3 +43,15 @@ Route::post('/cdr-report-show', 'CdrController@reportShow');
 Route::get('/chart', 'ChartController@index');
 
 Route::post('/thana-login', 'ThanaLoginController@index');
+
+Route::get('division', 'DivisionController@index');
+Route::get('division/create', 'DivisionController@create');
+Route::post('division', 'DivisionController@store');
+Route::get('division/{id}/edit', 'DivisionController@edit');
+Route::put('division/{id}', 'DivisionController@update');
+
+Route::get('district', 'DistrictController@index');
+Route::get('district/create', 'DistrictController@create');
+Route::post('district', 'DistrictController@store');
+Route::get('district/{id}/edit', 'DistrictController@edit');
+Route::put('district/{id}', 'DistrictController@update');

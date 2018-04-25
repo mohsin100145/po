@@ -85,16 +85,29 @@
               <i class="fa fa-pie-chart"></i> <span>Chart</span>
             </a>
           </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-user-circle"></i>
-              <span>{{ Auth::user()->name }}</span>
+          <li {{ ( Request::is('division') || Request::is('division/*') ? 'class=active' : '' ) }}>
+            <a href="{{ url('/division') }}">
+              <i class="fa fa-phone-square"></i> <span>Division</span>
             </a>
-            <ul class="treeview-menu">
-              <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
-            </ul>
           </li>
-
+          <li {{ ( Request::is('district') || Request::is('district/*') ? 'class=active' : '' ) }}>
+            <a href="{{ url('/district') }}">
+              <i class="fa fa-text-width"></i> <span>District</span>
+            </a>
+          </li>
+          @if (Auth::guest())
+            <li><a href="{{ url('/login') }}">Login</a></li>
+          @else
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-user-circle"></i>
+                <span>{{ Auth::user()->name }}</span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+              </ul>
+            </li>
+          @endif
 		      <li style="margin-top: 50px;" class="thumbnail">      
 					  <img src="{{ asset('assets/img/bottom_logo.jpg') }}" alt="Bottom Logo" style="height: 186px; width: 186px;" >          	
 				  </li>
