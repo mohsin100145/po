@@ -20,6 +20,12 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets_login/css/util.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets_login/css/main.css') }}">
 <!--===============================================================================================-->
+	<style type="text/css">
+		.alert {
+    		padding: 0px; 
+    		margin-bottom: 0px; 
+		}
+	</style>
 </head>
 <body>
 	
@@ -37,7 +43,9 @@
 					</div> -->
 				</div>
 
-				<form class="login100-form validate-form">
+				<form method="POST" action="{{ url('/thana-login') }}" class="login100-form validate-form">
+					@include('flash::message')
+					{{ csrf_field() }}
 					<span class="login100-form-title" style="padding-bottom: 10px;">
 						Thana Login
 					</span>
@@ -51,7 +59,7 @@
 					</div>
 
 					<div class="wrap-input100 " data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Thana Password">
+						<input class="input100" type="password" name="phone_password" placeholder="Thana Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -59,7 +67,7 @@
 					</div>
 					
 					<div class="container-login100-form-btn" style="padding-top: 0px;">
-						<button class="login100-form-btn">
+						<button type="submit" class="login100-form-btn">
 							Thana Login
 						</button>
 					</div>

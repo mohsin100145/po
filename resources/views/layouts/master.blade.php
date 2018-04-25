@@ -103,7 +103,9 @@
 		</aside>
 
 	  <div class="container"> 
-	    @include('flash::message')
+      <div class="col-sm-offset-2 col-sm-8">
+	      @include('flash::message')
+      </div>
 	  </div>
 
 	  <div class="content-wrapper">

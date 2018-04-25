@@ -20,9 +20,9 @@
                     <div class="row">
                         <div class="col-sm-12">
                             {!! Form::open([
-                                    'method'      => 'get',
+                                    'url'         => 'cdr-report-show',
+                                    'method'      => 'post',
                                     'role'        => 'form',
-                                    'target'      => '_blank',
                                     'id'          => 'report-form',
                                     'class'       => 'form-horizontal'
                                 ])
@@ -39,12 +39,12 @@
                                 </div>
                             </div>
 
-                            <div class="required form-group{{ $errors->has('to') ? ' has-error' : '' }}">
-                                {!! Form::label('to', 'End Date', ['class' => 'col-sm-3 col-sm-offset-0 control-label']) !!}
+                            <div class="required form-group{{ $errors->has('end_date') ? ' has-error' : '' }}">
+                                {!! Form::label('end_date', 'End Date', ['class' => 'col-sm-3 col-sm-offset-0 control-label']) !!}
                                 <div class="col-sm-7">
-                                    {!! Form::text('to', null, ['class' => 'form-control', 'id' => 'datepicker1']) !!}
+                                    {!! Form::text('end_date', null, ['class' => 'form-control', 'id' => 'datepicker1']) !!}
                                     <span class="help-block text-danger">
-                                        {!! $errors->first('to') !!}
+                                        {!! $errors->first('end_date') !!}
                                     </span>
                                 </div>
                             </div>
@@ -67,12 +67,16 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/start/jquery-ui.css">
+    <style type="text/css">
+        .ui-datepicker-month{ color: black; }
+        .ui-datepicker-year{ color: black; }
+    </style>
 @endsection
 
 
 @section('script')
-    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $( function() {
             // $( "#datepicker" ).datepicker({ changeMonth: true, changeYear: true });

@@ -20,4 +20,15 @@ class CdrController extends Controller
     {
     	return view('cdr.report_form');
     }
+
+    public function reportShow(Request $request)
+    {
+    	$startDate = $request->start_date;
+    	$endDate = $request->end_date;
+    	$startDateTime = $request->start_date . " 00:00:00";
+    	$endDateTime = $request->end_date . " 23:59:59";
+    	$cdrs = Cdr::whereBetween('calldate', [$startDateTime, $endDateTime])->orderBy('id', 'desc')->get();
+
+    	return view('cdr.report_show', compact('cdrs', 'startDate', 'endDate'));
+    }
 }

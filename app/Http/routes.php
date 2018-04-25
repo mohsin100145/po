@@ -38,5 +38,8 @@ Route::put('/carrier/{id}', 'CarrierController@update');
 
 Route::get('/cdr', 'CdrController@index');
 Route::get('/cdr-report-form', 'CdrController@reportForm');
+Route::post('/cdr-report-show', 'CdrController@reportShow');
 
 Route::get('/chart', 'ChartController@index');
+
+Route::post('/thana-login', 'ThanaLoginController@index');
