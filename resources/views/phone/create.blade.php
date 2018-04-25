@@ -36,6 +36,20 @@
                         </div>
                     </div>
 
+                    <div class="form-group required {{ $errors->has('division_id') ? 'has-error' : '' }}">
+                        {!! Form::label('division_id', 'Select Division Name', ['class' => 'control-label col-sm-3 col-xs-3']) !!}
+                        <div class="col-xs-9 col-sm-9">
+                            <div class="col-xs-12 col-sm-12">
+                                {!! Form::select('division_id', $divisionList, null, ['class' => 'form-control', 'placeholder' => 'Select Division Name', 'id' => 'division_id']) !!}
+                                <span class="text-danger">
+                                    {{ $errors->first('division_id') }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span id="district_show"></span>
+
                     <div class="required form-group {{ $errors->has('thana') ? 'has-error' : ''}}">
                         {!! Form::label('thana', 'Thana Name', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                         <div class="col-xs-9 col-sm-9">
@@ -77,4 +91,26 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function(){
+            $("#division_id").change(function(){
+                //alert("The text has been changed.");
+                var divisionId = $("#division_id").val();
+                var url = '{{ url("/phone/division-district-show")}}';
+                $.get(url+'?division_id='+divisionId, function (data) {
+                    $('#district_show').html(data);
+                });
+            });
+        });
+
+        // $(document).ready(function () {
+        //     $("#ticketForm").submit(function () {
+        //         $(".submitBtnTicket").attr("disabled", true);
+        //         return true;
+        //     });
+        // });
+    </script>
 @endsection

@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/dashboard2', 'HomeController@dashboard2');
 Route::get('/dashboard3', 'HomeController@dashboard3');
 
+Route::get('phone/division-district-show', 'PhoneController@divisionDistrictShow');
 Route::get('/phone', 'PhoneController@index');
 Route::get('/phone/create', 'PhoneController@create');
 Route::post('/phone/store', 'PhoneController@store');

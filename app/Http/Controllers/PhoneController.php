@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Models\Phone;
+use App\Models\Division;
+use App\Models\District;
 use Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +28,8 @@ class PhoneController extends Controller
 
     public function create()
     {
-    	return view('phone.create');    
+        $divisionList = Division::pluck('name', 'id');
+    	return view('phone.create', compact('divisionList'));    
     }
 
     public function store(Request $request)
@@ -239,5 +242,11 @@ class PhoneController extends Controller
         $phone->save();
         flash()->success($username . ' Phone Extension Updated Successfully');
     	return redirect('phone');
+    }
+
+    public function divisionDistrictShow(Request $request)
+    {   
+        $districtList = District::where('division_id', $request->division_id)->pluck('name', 'id');
+        return view('phone.division_district', compact('districtList'));
     }
 }
