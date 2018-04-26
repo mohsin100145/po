@@ -23,6 +23,13 @@ class CreatePhonesTable extends Migration
             $table->string('type');
             $table->string('host');
             $table->string('thana');
+            $table->integer('division_id')->unsigned();
+            $table->integer('district_id')->unsigned();
+            $table->string('incharge')->nullable();
+            $table->string('duty_officer')->nullable();
+            $table->string('oc')->nullable();
+            $table->string('address')->nullable();
+            $table->string('remarks')->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->integer('deleted_by')->unsigned()->nullable();

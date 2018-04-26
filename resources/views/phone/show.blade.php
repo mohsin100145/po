@@ -19,6 +19,20 @@
                                     <td>{{ $phone->thana }}</td>
                                 </tr>
                                 <tr>
+                                    <td><b>District</b></td>
+                                    @if(isset($phone->district->name))
+                                        <td>{{ $phone->district->name }}</td>
+                                    @else
+                                        <td></td>
+                                    @endif
+                                    <td><b>Division</b></td>
+                                    @if(isset($phone->district->division->name))
+                                        <td>{{ $phone->district->division->name }}</td>
+                                    @else
+                                        <td></td>
+                                    @endif
+                                </tr>
+                                <tr>
                                     <td><b>Username</b></td>
                                     <td>{{ $phone->username }}</td>
                                     <td><b>Secret</b></td>
@@ -41,6 +55,22 @@
                                     <td>{{ $phone->type }}</td>
                                     <td><b>Host</b></td>
                                     <td>{{ $phone->host }}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Incharge</b></td>
+                                    <td>{{ $phone->incharge }}</td>
+                                    <td><b>Duty Officer</b></td>
+                                    <td>{{ $phone->duty_officer }}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>OC</b></td>
+                                    <td>{{ $phone->oc }}</td>
+                                    <td><b>Address</b></td>
+                                    <td>{{ $phone->address }}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Remarks</b></td>
+                                    <td colspan="3">{{ $phone->remarks }}</td>
                                 </tr>
                             </tbody>
                         </table>

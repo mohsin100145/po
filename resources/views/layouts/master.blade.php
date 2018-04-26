@@ -67,7 +67,7 @@
 				  </li>
       		<li {{ ( Request::is('phone') || Request::is('phone/*') ? 'class=active' : '' ) }}>
         		<a href="{{ url('/phone') }}">
-          		<i class="fa fa-phone-square"></i> <span>Phone Extension</span>
+          		<i class="fa fa-phone-square"></i> <span>Phone Extension & P.S.</span>
         		</a>
       		</li>
       		<li {{ ( Request::is('carrier') || Request::is('carrier/*') ? 'class=active' : '' ) }}>

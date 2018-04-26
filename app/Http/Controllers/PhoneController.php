@@ -21,8 +21,7 @@ class PhoneController extends Controller
 
     public function index()
     {
-    	$phones = Phone::orderBy('id', 'desc')->get();
-
+    	$phones = Phone::with('district')->orderBy('id', 'desc')->get();
         return view('phone.index', compact('phones'));
     }
 
@@ -48,14 +47,18 @@ class PhoneController extends Controller
 	    $rules = [
 	    	'username' => 'required|unique:phones',
 	    	'secret' => 'required',
-	    	'thana' => 'required|unique:phones'
+	    	'thana' => 'required|unique:phones',
+            'division_id' => 'required',
+            'district_id' => 'required'
 	    ];
 	    $messages = [
             'username.required' => 'Phone Username field is required.',
             'username.unique' => 'Phone Username already exist.',
             'secret.required' => 'Phone Secret field is required.',
             'thana.required' => 'Thana Name field is required.',
-            'thana.unique' => 'Thana Name already exist.'
+            'thana.unique' => 'Thana Name already exist.',
+            'division_id.required' => 'Division Name field is required.',
+            'district_id.required' => 'District Name field is required.'
         ];
 	    
     	$validator = Validator::make($input, $rules, $messages);
@@ -137,10 +140,17 @@ class PhoneController extends Controller
         $phone->type = $type;
         $phone->host = $host;
         $phone->thana = $thana;
+        $phone->division_id = $request->division_id;
+        $phone->district_id = $request->district_id;
+        $phone->incharge = $request->incharge;
+        $phone->duty_officer = $request->duty_officer;
+        $phone->oc = $request->oc;
+        $phone->address = $request->address;
+        $phone->remarks = $request->remarks;
         $phone->created_by = Auth::id();
         $phone->save();
 
-		flash()->message($username . ' Phone Extension Created Successfully.');
+		flash()->message($username . ' Phone Extension & ' . $thana . ' Created Successfully.');
     	return redirect('/phone');
     }
 
@@ -152,8 +162,9 @@ class PhoneController extends Controller
 
 	public function edit($id)
     {
-    	$phone = Phone::find($id);
-    	return view('phone.edit', compact('phone'));
+    	$phone = Phone::with('district')->find($id);
+        $divisionList = Division::pluck('name', 'id');
+    	return view('phone.edit', compact('phone', 'divisionList'));
     }
     
     public function update(Request $request, $id)
@@ -171,14 +182,18 @@ class PhoneController extends Controller
 	    $rules = [
 	    	'username' => 'required|unique:phones,username,'.$phone->id,
 	    	'secret' => 'required',
-	    	'thana' => 'required|unique:phones,thana,'.$phone->id
+	    	'thana' => 'required|unique:phones,thana,'.$phone->id,
+            'division_id' => 'required',
+            'district_id' => 'required'
 	    ];
 	    $messages = [
             'username.required' => 'Phone Username field is required.',
             'username.unique' => 'Phone Username already exist.',
             'secret.required' => 'Phone Secret field is required.',
             'thana.required' => 'Thana Name field is required.',
-            'thana.unique' => 'Thana Name already exist.'
+            'thana.unique' => 'Thana Name already exist.',
+            'division_id.required' => 'Division Name field is required.',
+            'district_id.required' => 'District Name field is required.'
         ];
 	    
     	$validator = Validator::make($input, $rules, $messages);
@@ -238,9 +253,16 @@ class PhoneController extends Controller
         $phone->callerid = $callerid;
         $phone->mailbox = $mailbox;
         $phone->thana = $thana;
+        $phone->division_id = $request->division_id;
+        $phone->district_id = $request->district_id;
+        $phone->incharge = $request->incharge;
+        $phone->duty_officer = $request->duty_officer;
+        $phone->oc = $request->oc;
+        $phone->address = $request->address;
+        $phone->remarks = $request->remarks;
         $phone->updated_by = Auth::id();
         $phone->save();
-        flash()->success($username . ' Phone Extension Updated Successfully');
+        flash()->success($username . ' Phone Extension & ' . $thana . ' Updated Successfully');
     	return redirect('phone');
     }
 

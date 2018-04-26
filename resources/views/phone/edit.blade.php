@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-1">
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    <h3 class="panel-title text-center"><i class="fa fa-pencil"></i> Update <code><b>Phone Extension</b></code> </h3>
+                    <h3 class="panel-title text-center"><i class="fa fa-pencil"></i> Update <code><b>Phone Extension</b></code> & <code><b>Police Station</b></code> </h3>
                 </div>
 
                 <div class="panel-body">
@@ -35,6 +35,20 @@
                         </div>
                     </div>
 
+                    <div class="form-group required {{ $errors->has('division_id') ? 'has-error' : '' }}">
+                        {!! Form::label('division_id', 'Select Division Name', ['class' => 'control-label col-sm-3 col-xs-3']) !!}
+                        <div class="col-xs-9 col-sm-9">
+                            <div class="col-xs-12 col-sm-12">
+                                {!! Form::select('division_id', $divisionList, null, ['class' => 'form-control', 'placeholder' => 'Select Division Name', 'id' => 'division_id']) !!}
+                                <span class="text-danger">
+                                    {{ $errors->first('division_id') }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span id="district_show"></span>
+
                     <div class="required form-group {{ $errors->has('thana') ? 'has-error' : ''}}">
                         {!! Form::label('thana', 'Thana Name', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                         <div class="col-xs-9 col-sm-9">
@@ -42,6 +56,66 @@
                                 {!! Form::text('thana', null, ['class' => 'form-control', 'id' => 'thana', 'placeholder' => 'Enter Thana Name', 'autocomplete' => 'off']) !!}
                                 <span class="text-danger">
                                     {{ $errors->first('thana') }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group {{ $errors->has('incharge') ? 'has-error' : ''}}">
+                        {!! Form::label('incharge', 'Incharge', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
+                        <div class="col-xs-9 col-sm-9">
+                            <div class="col-xs-12 col-sm-12">
+                                {!! Form::text('incharge', null, ['class' => 'form-control', 'id' => 'incharge', 'placeholder' => 'Enter Incharge', 'autocomplete' => 'off']) !!}
+                                <span class="text-danger">
+                                    {{ $errors->first('incharge') }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group {{ $errors->has('duty_officer') ? 'has-error' : ''}}">
+                        {!! Form::label('duty_officer', 'Duty Officer', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
+                        <div class="col-xs-9 col-sm-9">
+                            <div class="col-xs-12 col-sm-12">
+                                {!! Form::text('duty_officer', null, ['class' => 'form-control', 'id' => 'duty_officer', 'placeholder' => 'Enter Duty Officer', 'autocomplete' => 'off']) !!}
+                                <span class="text-danger">
+                                    {{ $errors->first('duty_officer') }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group {{ $errors->has('oc') ? 'has-error' : ''}}">
+                        {!! Form::label('oc', 'OC', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
+                        <div class="col-xs-9 col-sm-9">
+                            <div class="col-xs-12 col-sm-12">
+                                {!! Form::text('oc', null, ['class' => 'form-control', 'id' => 'oc', 'placeholder' => 'Enter OC', 'autocomplete' => 'off']) !!}
+                                <span class="text-danger">
+                                    {{ $errors->first('oc') }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group {{ $errors->has('address') ? 'has-error' : ''}}">
+                        {!! Form::label('address', 'Address', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
+                        <div class="col-xs-9 col-sm-9">
+                            <div class="col-xs-12 col-sm-12">
+                                {!! Form::text('address', null, ['class' => 'form-control', 'id' => 'address', 'placeholder' => 'Enter Address', 'autocomplete' => 'off']) !!}
+                                <span class="text-danger">
+                                    {{ $errors->first('address') }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group {{ $errors->has('remarks') ? 'has-error' : ''}}">
+                        {!! Form::label('remarks', 'Remarks', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
+                        <div class="col-xs-9 col-sm-9">
+                            <div class="col-xs-12 col-sm-12">
+                                {!! Form::text('remarks', null, ['class' => 'form-control', 'id' => 'remarks', 'placeholder' => 'Enter Remarks', 'autocomplete' => 'off']) !!}
+                                <span class="text-danger">
+                                    {{ $errors->first('remarks') }}
                                 </span>
                             </div>
                         </div>
@@ -76,4 +150,18 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function(){
+            $("#division_id").change(function(){
+                var divisionId = $("#division_id").val();
+                var url = '{{ url("/phone/division-district-show")}}';
+                $.get(url+'?division_id='+divisionId, function (data) {
+                    $('#district_show').html(data);
+                });
+            });
+        });
+    </script>
 @endsection
