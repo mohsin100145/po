@@ -49,13 +49,13 @@
 
                     <span id="district_show"></span>
 
-                    <div class="required form-group {{ $errors->has('thana') ? 'has-error' : ''}}">
-                        {!! Form::label('thana', 'Thana Name', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
+                    <div class="required form-group {{ $errors->has('police_station') ? 'has-error' : ''}}">
+                        {!! Form::label('police_station', 'Police Station Name', ['class' => 'col-xs-3 col-sm-3 control-label']) !!}
                         <div class="col-xs-9 col-sm-9">
                             <div class="col-xs-12 col-sm-12">
-                                {!! Form::text('thana', null, ['class' => 'form-control', 'id' => 'thana', 'placeholder' => 'Enter Thana Name', 'autocomplete' => 'off']) !!}
+                                {!! Form::text('police_station', null, ['class' => 'form-control', 'id' => 'police_station', 'placeholder' => 'Enter Police Station Name', 'autocomplete' => 'off']) !!}
                                 <span class="text-danger">
-                                    {{ $errors->first('thana') }}
+                                    {{ $errors->first('police_station') }}
                                 </span>
                             </div>
                         </div>

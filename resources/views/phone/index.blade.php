@@ -45,7 +45,7 @@
                                     <td>{{ $phone->id }}</td>
                                     <td><strong>{{ $phone->username }}</strong></td>
                                     <td>{{ $phone->secret }}</td>
-                                    <td><strong>{{ $phone->thana }}</strong></td>
+                                    <td><strong>{{ $phone->police_station }}</strong></td>
                                     @if(isset($phone->district->name))
                                         <td>{{ $phone->district->name }}</td>
                                     @else

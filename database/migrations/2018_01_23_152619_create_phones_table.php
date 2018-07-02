@@ -22,7 +22,7 @@ class CreatePhonesTable extends Migration
             $table->string('context');
             $table->string('type');
             $table->string('host');
-            $table->string('thana');
+            $table->string('police_station');
             $table->integer('division_id')->unsigned();
             $table->integer('district_id')->unsigned();
             $table->string('incharge')->nullable();
