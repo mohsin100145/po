@@ -6,7 +6,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title text-center"><code><b><i class="fa fa-eye"></i> Phone Extension Information of : {{ $phone->thana }}</b></code> </h3>
+                    <h3 class="panel-title text-center"><code><b><i class="fa fa-eye"></i> Phone Extension Information of : {{ $phone->police_station }}</b></code> </h3>
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">          
@@ -15,8 +15,8 @@
                                 <tr>
                                     <td><b>ID</b></td>
                                     <td>{{ $phone->id }}</td>
-                                    <td><b>Thana</b></td>
-                                    <td>{{ $phone->thana }}</td>
+                                    <td><b>Police Station</b></td>
+                                    <td>{{ $phone->police_station }}</td>
                                 </tr>
                                 <tr>
                                     <td><b>District</b></td>

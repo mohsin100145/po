@@ -30,8 +30,8 @@
                                 <h1 data-animation="animated zoomInRight">999 National Emergency Service</h1>
                                 <p data-animation="animated fadeInLeft">Police hsdjfnch uhnfcuhd khfcdsui iyngcf</p>
                                 @if (Auth::guest())
-                                    <a href="{!! url('/login') !!}" class="btn btn-default" data-animation="animated fadeInLeft">Click Here To Thana Login</a>
-                                    <a href="{!! url('/login') !!}" class="btn btn-primary" data-animation="animated fadeInRight">Click Here To Dashboard Login</a>    
+                                    <a href="{!! url('/login') !!}" class="btn btn-default" data-animation="animated fadeInLeft">Click Here To Login</a>
+                                    <a href="{!! url('/login') !!}" class="btn btn-primary" data-animation="animated fadeInRight">Click Here To Login</a>    
                                 @else
                                     <a href="{!! url('/home') !!}" class="btn btn-default" data-animation="animated fadeInLeft">Call Counter Dashboard</a>
                                     <a href="{!! url('/phone') !!}" class="btn btn-primary" data-animation="animated fadeInRight">Phone Extension</a>  
@@ -48,8 +48,8 @@
                         <h1 data-animation="animated flipInX">Hamba Intenational</h1>
                         <p data-animation="animated lightSpeedIn"> Tjkdfsg isdfhnuuh iufhcuh iuhufvh ijfgv</p>
                         @if (Auth::guest())
-                            <a href="{!! url('/login') !!}" class="btn btn-default" data-animation="animated fadeInUp">Click Here To Thana Login</a>
-                            <a href="#" class="btn btn-primary" data-animation="animated fadeInDown">Click Here To Dashboard Login</a>    
+                            <a href="{!! url('/login') !!}" class="btn btn-default" data-animation="animated fadeInUp">Click Here To Login</a>
+                            <a href="#" class="btn btn-primary" data-animation="animated fadeInDown">Click Here To Login</a>    
                         @else
                             <a href="{!! url('/dashboard2') !!}" class="btn btn-default" data-animation="animated fadeInUp">Call Disposition Dashboard</a>
                             <a href="{!! url('/carrier') !!}" class="btn btn-primary" data-animation="animated fadeInDown">Carrier</a>  
@@ -64,8 +64,8 @@
                         <h1 data-animation="animated zoomInLeft">fgyhfohkfg uioiutrbvu  rtyiu uytf</h1>
                         <p data-animation="animated fadeInRight">dfgjljkljit hkuhghdhu rthff dgj</p>
                         @if (Auth::guest())
-                            <a href="{!! url('/login') !!}" class="btn btn-default" data-animation="animated fadeInLeft">Click Here To Thana Login</a>
-                            <a href="{!! url('/login') !!}" class="btn btn-primary" data-animation="animated fadeInRight">Click Here To Dashboard Login</a>    
+                            <a href="{!! url('/login') !!}" class="btn btn-default" data-animation="animated fadeInLeft">Click Here To Login</a>
+                            <a href="{!! url('/login') !!}" class="btn btn-primary" data-animation="animated fadeInRight">Click Here To Login</a>    
                         @else
                             <a href="{!! url('/dashboard3') !!}" class="btn btn-default" data-animation="animated fadeInLeft">Call Summary Dashboard</a>
                                 <a href="{!! url('/cdr') !!}" class="btn btn-primary" data-animation="animated fadeInRight">Call Detail Records</a>  
